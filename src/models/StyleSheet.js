@@ -27,6 +27,10 @@ class StyleSheet {
   rules () {
     return this.globalStyleSheet.rules().concat(this.componentStyleSheet.rules())
   }
+  targetDocument (doc) {
+    this.globalStyleSheet.targetDocument(doc)
+    this.componentStyleSheet.targetDocument(doc)
+  }
 }
 
 /* Export stylesheet as a singleton class */

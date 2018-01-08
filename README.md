@@ -1,3 +1,7 @@
+## Fork Description
+
+Provides support for injecting styles into iframes, using the `targetDocument` method described below.
+
 # vue-styled-components
 
 > Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress 💅
@@ -212,6 +216,20 @@ injectGlobal`
 		margin: 0;
 	}
 `;
+```
+
+### targetDocument
+
+A method that will change which document vue-styled-components injects the css tag.
+
+```JS
+// iframe-styles.js
+
+import { targetDocument } from 'vue-styled-components';
+
+const iframe = document.querySelector('iframe');
+
+targetDocument(iframe.contentWindow.document);
 ```
 
 ## Syntax highlighting

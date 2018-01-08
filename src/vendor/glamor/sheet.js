@@ -66,6 +66,7 @@ export class StyleSheet {
     this.sheet = undefined
     this.tags = []
     this.maxLength = maxLength
+    this.doc = document
     this.ctr = 0
   }
   inject() {
@@ -92,6 +93,16 @@ export class StyleSheet {
       }
     }
     this.injected = true
+  }
+  targetDocument (doc) {
+    if (this.doc != doc) {
+      this.doc = doc
+      
+      if(isBrowser && this.injected) {
+        const appendPoint = (doc.head || doc.getElementsByTagName('head')[0])
+        this.tags.forEach(tag => tag.parentNode.removeChild(tag) && appendPoint.appendChild(tag))
+      }
+    }
   }
   speedy(bool) {
     if(this.ctr !== 0) {

@@ -2,6 +2,7 @@ Vendored glamor/sheet.js as of [582dde4](https://github.com/threepointone/glamor
 
 Then hacked things around:
 
+* Added a method to set the target document of the style tags
 * Deleted `previous-map.js` and all references to it because it `require('fs')`ed
 * Made `StyleSheet.insert()` return something with an `update()` method
 * Replaced nested `require` statements with `import` declarations for the sake of a leaner bundle. This entails adding empty imports to three files to guarantee correct ordering – see https://github.com/styled-components/styled-components/pull/100

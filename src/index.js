@@ -1,4 +1,5 @@
 import generateAlphabeticName from './utils/generateAlphabeticName'
+import targetDocument from './utils/targetDocument'
 import css from './constructors/css'
 import injectGlobal from './constructors/injectGlobal'
 
@@ -10,4 +11,4 @@ const styled = _styled(_styledComponent(_componentStyle(generateAlphabeticName))
 
 export default styled
 
-export { css, injectGlobal }
+export { css, injectGlobal, targetDocument }
